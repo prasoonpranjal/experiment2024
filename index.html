@@ -6,24 +6,42 @@
     <title>Video with Chapters</title>
 </head>
 <body>
-    <h1>My Vidddddeo with Chapters</h1>
-    <video id="videoPlayer" width="640" height="360" controls>
-        <source src="https://drive.google.com/uc?id=1GV27XXGDpHonRqU5TdJIfVwkZaSPJq6A&export=download" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <iframe src="https://drive.google.com/file/d/1GV27XXGDpHonRqU5TdJIfVwkZaSPJq6A/preview" width="640" height="360" allow="autoplay"></iframe>
+    <h1>NA_FY24_Q3_WBR_TDG_JNMGMT_CJA_AvntrCJAWBR_JUN-13</h1>
+  
+    <iframe id="videoPlayer" src="https://drive.google.com/file/d/1GV27XXGDpHonRqU5TdJIfVwkZaSPJq6A/preview" width="640" height="360" allow="autoplay"></iframe>
     <h2>Chapters</h2>
     <ul>
-        <li><a href="#" onclick="seekTo(0)">Chapter 1: Introduction</a></li>
-        <li><a href="#" onclick="seekTo(60)">Chapter 2: Main Content</a></li>
-        <li><a href="#" onclick="seekTo(120)">Chapter 3: Conclusion</a></li>
+        <li><a href="#" onclick="seekVideo('0:00:00')">Crafting the Customer Journey: Insights and Engagement with Brian Skelton (0:00:00 - 0:02:06)</a></li>
+        <li><a href="#" onclick="seekVideo('0:02:06')">The Art of Storytelling in Customer Experiences: Building Brand Classics (0:02:06 - 0:05:25)</a></li>
+        <li><a href="#" onclick="seekVideo('0:05:25')">Crafting Personalized Journeys: Data-Driven Strategies for Growth (0:05:25 - 0:07:45)</a></li>
+        <li><a href="#" onclick="seekVideo('0:07:45')">Unleashing Cross-Channel Insights: The Power of CJA Stitching (0:07:45 - 0:12:17)</a></li>
+        <li><a href="#" onclick="seekVideo('0:12:17')">Navigating the CJA Interface: A Guide to Stitched Data Analysis (0:12:17 - 0:14:27)</a></li>
+        <li><a href="#" onclick="seekVideo('0:14:27')">Unveiling Cross-Channel Insights with Customer Journey Analytics (0:14:27 - 0:21:05)</a></li>
+        <li><a href="#" onclick="seekVideo('0:21:05')">Integrating Real-Time CDP for Enhanced Customer Profiles (0:21:05 - 0:23:44)</a></li>
+        <li><a href="#" onclick="seekVideo('0:23:44')">Leveraging CJA for Advanced Audience Insights and Activation (0:23:44 - 0:26:47)</a></li>
+        <li><a href="#" onclick="seekVideo('0:26:47')">Enhancing Healthcare Marketing Strategies with CJA Audience Sizing (0:26:47 - 0:33:45)</a></li>
+        <li><a href="#" onclick="seekVideo('0:33:45')">Streamlining Financial Services with Targeted CJA Audiences and Future CDP Integration (0:33:45 - 0:36:41)</a></li>
+        <li><a href="#" onclick="seekVideo('0:36:41')">Enhancing Omni-Channel Strategies with Adobe Journey Optimizer and CJA Insights (0:36:41 - 0:39:15)</a></li>
+        <li><a href="#" onclick="seekVideo('0:39:15')">Strategic Planning and Performance Measurement with CJA (0:39:15 - 0:41:17)</a></li>
+        <li><a href="#" onclick="seekVideo('0:41:17')">Analyzing Customer Journeys and AJO Impact on Call Center Operations (0:41:17 - 0:44:08)</a></li>
+        <li><a href="#" onclick="seekVideo('0:44:08')">Enhancing Customer Experience through CJA's Insight-Driven Audience Optimization (0:44:08 - 0:48:06)</a></li>
+        <li><a href="#" onclick="seekVideo('0:48:06')">Q&A Session: Crafting Compelling Narratives with Cross-Channel Data Integration (0:48:06 - 0:50:16)</a></li>
     </ul>
 
-    <script>
-        function seekTo(seconds) {
-            var video = document.getElementById('videoPlayer');
-            video.currentTime = seconds;
-            video.play();
+
+   <script>
+        function seekVideo(time) {
+            const parts = time.split(':');
+            const seconds = (+parts[0]) * 60 * 60 + (+parts[1]) * 60 + (+parts[2]);
+            
+            // Get the iframe element
+            const iframe = document.getElementById('videoPlayer');
+            
+            // Construct the new URL with the start time
+            const newUrl = `https://drive.google.com/file/d/1GV27XXGDpHonRqU5TdJIfVwkZaSPJq6A/preview?start=${seconds}`;
+            
+            // Update the iframe's src attribute
+            iframe.src = newUrl;
         }
     </script>
 </body>
